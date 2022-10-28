@@ -73,6 +73,7 @@ body {
 
 /***FONTS***/
 h1 {
+    margin: 0;
     font-family: 'Spectral';
     font-style: normal;
     font-weight: 500;
@@ -104,6 +105,7 @@ h4 {
 }
 
 .body-light-font {
+    margin: 0;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 300;
@@ -190,7 +192,8 @@ h4 {
 }
 
 .contacts__item-icon:before,
-.experience__item-icon::before {
+.experience__item-icon::before,
+.education__item::before {
     content: "";
     position: absolute;
     top: 0px;
@@ -243,7 +246,10 @@ h4 {
 }
 
 .experience__title,
-.skills__title {
+.skills__title,
+.education__title,
+.education_grade,
+.courses__title {
     margin-bottom: 16px;
 }
 
@@ -251,11 +257,13 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 .experience__item {
     position: relative;
+    margin-left: 30px;
+    margin-bottom: 12px;
 }
 
 .experience__item-icon:nth-of-type(1)::before {
@@ -272,14 +280,59 @@ h4 {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-
 }
 
 .skills__item {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.skills-education {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+/***EDUCATION***/
+.education {
+    margin-bottom: 24px;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.education_info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    list-style: none;
+}
+
+.education__item {
+    position: relative;
     margin-bottom: 16px;
 }
 
+.education__item:nth-of-type(1) {
+    margin-right: 50px;
+}
 
-.main__wrapper>section {
+.education__item-icon:nth-of-type(1)::before {
+    background-image: url(assets/icons/book.svg);
+}
+
+.education__item-icon:nth-of-type(2)::before {
+    background-image: url(assets/icons/calendar.svg);
+}
+
+/***COURSES***/
+
+/***NEED TO DELETE***/
+/* .skills-education>* {
     border: 1px solid pink;
 }
+
+.main__wrapper>* {
+    border: 1px solid pink;
+} */
