@@ -71,6 +71,7 @@ body {
     color: #242424;
 }
 
+/***FONTS***/
 h1 {
     font-family: 'Spectral';
     font-style: normal;
@@ -112,6 +113,7 @@ h4 {
 }
 
 .body-font {
+    margin: 0;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -134,7 +136,6 @@ h4 {
 }
 
 /***PROFILE***/
-
 .profile {
     display: flex;
     flex-wrap: wrap;
@@ -181,12 +182,6 @@ h4 {
 .contacts__item {
     position: relative;
     margin: 10px 50px 10px 0;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1rem;
-    line-height: 1.2rem;
-    color: #242424;
 }
 
 .contacts__item a {
@@ -194,7 +189,8 @@ h4 {
     color: #242424;
 }
 
-.contacts__item-icon:before {
+.contacts__item-icon:before,
+.experience__item-icon::before {
     content: "";
     position: absolute;
     top: 0px;
@@ -239,4 +235,51 @@ h4 {
     line-height: 130%;
     letter-spacing: -0.05rem;
     color: #242424;
+}
+
+/***EXPERIENCE***/
+.experience {
+    margin-bottom: 24px;
+}
+
+.experience__title,
+.skills__title {
+    margin-bottom: 16px;
+}
+
+.experience__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experience__item {
+    position: relative;
+}
+
+.experience__item-icon:nth-of-type(1)::before {
+    background-image: url(assets/icons/company.svg);
+}
+
+.experience__item-icon:nth-of-type(2)::before {
+    background-image: url(assets/icons/calendar.svg);
+}
+
+/***SKILLS***/
+.skills__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.skills__item {
+    margin-bottom: 16px;
+}
+
+
+.main__wrapper>section {
+    border: 1px solid pink;
 }
