@@ -57,6 +57,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     font-size: 20px;
 }
 
@@ -86,7 +87,7 @@ h3 {
     font-family: 'Lato';
     font-style: normal;
     font-weight: 900;
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.2rem;
     letter-spacing: 0.15rem;
     text-transform: uppercase;
@@ -95,11 +96,11 @@ h3 {
 
 h4 {
     margin: 0;
-    font-family: 'Spectral';
-    font-style: italic;
-    font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
     letter-spacing: -0.03rem;
     color: #2D3E5B;
 }
@@ -124,6 +125,40 @@ h4 {
     color: #242424;
 }
 
+/***HEADER***/
+.navigation__list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation__list-link {
+    text-decoration: none;
+}
+
+.navigation__list-link,
+.footer-info_link {
+    position: relative;
+}
+
+.navigation__list-link::before,
+.footer-info_link::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background: #2D3E5B;
+    transition: width 0.5s;
+}
+
+.navigation__list-link:hover:before,
+.footer-info_link:hover:before {
+    width: 100%;
+}
+
+/***MAIN***/
 .wrapper {
     margin: 0 auto;
     padding-left: 10px;
@@ -174,21 +209,21 @@ h4 {
 }
 
 .contacts__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    align-items: center;
     list-style: none;
     margin: 0;
 }
 
 .contacts__item {
-    position: relative;
-    margin: 10px 50px 10px 0;
+    margin: 10px 10px 10px 0;
+    text-align: center;
 }
 
-.contacts__item a {
+.contacts__item-icon {
+    position: relative;
     text-decoration: none;
     color: #242424;
 }
@@ -208,24 +243,36 @@ h4 {
     background-repeat: no-repeat;
 }
 
-.contacts__item-icon:nth-child(1)::before {
+.contacts__location::before {
     background-image: url(assets/icons/location.svg);
 }
 
-.contacts__item-icon:nth-child(2)::before {
+.contacts__email::before {
     background-image: url(assets/icons/mail.svg);
 }
 
-.contacts__item-icon:nth-child(3)::before {
+.contacts__telegram::before {
     background-image: url(assets/icons/telegram.svg);
 }
 
-.contacts__item-icon:nth-child(4)::before {
+.contacts__github::before {
+    background-image: url(assets/icons/github.svg);
+}
+
+.contacts__instagram::before {
     background-image: url(assets/icons/instagram.svg);
 }
 
-.contacts__item-icon:nth-child(5)::before {
-    background-image: url(assets/icons/github.svg);
+.contacts__linkedin::before {
+    background-image: url(assets/icons/linkedin.svg);
+}
+
+.contacts__leetcode::before {
+    background-image: url(assets/icons/leetcode.svg);
+}
+
+.contacts__codewars::before {
+    background-image: url(assets/icons/codewars.svg);
 }
 
 /***SUMMARY***/
@@ -296,15 +343,22 @@ h4 {
 }
 
 .skills__item {
-    padding-bottom: 16px;
+    padding: 16px 0;
     border-bottom: 1px solid #EDEDED;
 }
 
-.skills-education {
+.education-courses {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 40px;
+}
+
+.skills-education {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 /***EDUCATION***/
@@ -342,6 +396,12 @@ h4 {
 }
 
 /***COURSES***/
+.courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .courses__list {
     margin-bottom: 24px;
     border-bottom: 1px solid #EDEDED;
@@ -357,6 +417,7 @@ h4 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 40px;
     padding-left: 30px;
     margin-bottom: 16px;
 }
