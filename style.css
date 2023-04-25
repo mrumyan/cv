@@ -64,6 +64,9 @@ html {
 body {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: 'Lato', Verdana, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -126,11 +129,16 @@ h4 {
 }
 
 /***HEADER***/
+.navigation {
+    height: 100%;
+}
+
 .navigation__list {
     display: flex;
     justify-content: space-between;
     padding: 0;
     list-style: none;
+    margin: 0;
 }
 
 .navigation__list-link {
@@ -184,8 +192,8 @@ h4 {
 }
 
 .profile__logo {
-    width: 200px;
-    height: 200px;
+    width: 275px;
+    height: 275px;
     border-radius: 50%;
 }
 
@@ -232,7 +240,8 @@ h4 {
 .experience__item-icon::before,
 .education__item::before,
 .courses__course-name-icon::before,
-.courses__period-icon::before {
+.courses__period-icon::before,
+.courses__certificate::before {
     content: "";
     position: absolute;
     top: 0px;
@@ -279,8 +288,7 @@ h4 {
 .summary {
     padding-left: 16px;
     padding-right: 16px;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin: 35px 0;
     background-color: #F7F8F8;
 }
 
@@ -297,7 +305,7 @@ h4 {
 
 /***EXPERIENCE***/
 .experience {
-    margin-bottom: 24px;
+    margin-bottom: 35px;
 }
 
 .experience__title,
@@ -420,4 +428,18 @@ h4 {
     gap: 40px;
     padding-left: 30px;
     margin-bottom: 16px;
+}
+
+.courses__certificate {
+    display: block;
+    position: relative;
+    margin-bottom: 16px;
+    padding-left: 30px;
+    text-decoration: none;
+    color: #242424;
+}
+
+.courses__certificate::before {
+    left: 0;
+    background-image: url(assets/icons/certificate.svg);
 }
