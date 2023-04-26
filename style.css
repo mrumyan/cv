@@ -145,13 +145,11 @@ h4 {
     text-decoration: none;
 }
 
-.navigation__list-link,
-.footer-info_link {
+.navigation__list-link {
     position: relative;
 }
 
-.navigation__list-link::before,
-.footer-info_link::before {
+.navigation__list-link::before {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -161,8 +159,7 @@ h4 {
     transition: width 0.5s;
 }
 
-.navigation__list-link:hover:before,
-.footer-info_link:hover:before {
+.navigation__list-link:hover:before {
     width: 100%;
 }
 
@@ -234,6 +231,11 @@ h4 {
     position: relative;
     text-decoration: none;
     color: #242424;
+}
+
+.contacts__item:not(:first-child) .contacts__item-icon:hover,
+.courses__certificate:hover {
+    color: #DB9291;
 }
 
 .contacts__item-icon:before,
@@ -313,7 +315,8 @@ h4 {
 .education__title,
 .education_grade,
 .courses__title,
-.courses__subtitle {
+.courses__subtitle,
+.projects__title {
     margin-bottom: 16px;
 }
 
@@ -359,7 +362,7 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .skills-education {
@@ -442,4 +445,38 @@ h4 {
 .courses__certificate::before {
     left: 0;
     background-image: url(assets/icons/certificate.svg);
+}
+
+/***PROJECTS***/
+.projects {
+    margin-bottom: 40px;
+}
+
+.projects__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    gap: 40px;
+}
+
+.projects__info {
+    margin: 0;
+}
+
+.projects__image {
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: .5s ease-in;
+}
+
+.projects__image:hover {
+    transform: scale(1.05);
+}
+
+.projects__description {
+    text-align: center;
 }
